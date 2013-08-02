@@ -169,7 +169,7 @@ let rec read_frames ic push =
   read_frames ic push
 
 (* Good enough, and do not eat entropy *)
-let myrng = CK.Random.pseudo_rng (CK.Random.string CK.Random.secure_rng 20)
+let myrng = CK.Random.pseudo_rng "dummmy_random" (* (CK.Random.string CK.Random.secure_rng 20) *)
 
 let rec write_frames ~masked stream oc =
   let send_frame fr =
