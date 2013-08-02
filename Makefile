@@ -14,7 +14,7 @@ dist/setup/lib-$(PACKAGE_NAME): dist/setup
 
 install: dist/setup/lib-$(PACKAGE_NAME)
 	ocamlfind remove $(PACKAGE_NAME)
-	ocamlfind install $(PACKAGE_NAME) dist/build/lib-$(PACKAGE_NAME)/$(PACKAGE_NAME).{cmi,cmx,cma,cmxa,o,a} lib/META
+	ocamlfind install $(PACKAGE_NAME) dist/build/lib-$(PACKAGE_NAME)/*.{cmi,cmx,cma,cmxa,o,a} lib/META
 
 clean:
 	obuild clean

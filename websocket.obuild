@@ -8,7 +8,7 @@ obuild-ver: 1
 homepage: https://github.com/vbmithr/ocaml-websocket
 
 library websocket
-        modules: Websocket
+        modules: Websocket, Lwt_io_ext
         src-dir: lib
         build-deps: lwt.syntax, lwt, cryptokit, cohttp.lwt, ocplib-endian
         pp: camlp4o

@@ -71,6 +71,7 @@ let sockaddr_of_dns node service =
 
 
 let set_tcp_nodelay fd =
-  Lwt_unix.setsockopt fd Lwt_unix.TCP_NODELAY true;
+  Printf.printf "warning tcp nodelay has been disabled\n" ; flush stdout ; ()
+(*   Lwt_unix.setsockopt fd Lwt_unix.TCP_NODELAY true;
   if not (Lwt_unix.getsockopt fd Lwt_unix.TCP_NODELAY)
-  then failwith "Unable to set TCP_NODELAY"
+  then failwith "Unable to set TCP_NODELAY" *)
