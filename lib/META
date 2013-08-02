@@ -1,6 +1,8 @@
-version = "0.2"
+version = "0.5"
 description = "Websocket library for Lwt"
+
 requires = "lwt lwt.syntax cryptokit cohttp.lwt ocplib-endian"
+
 archive(byte) = "websocket.cma"
 archive(byte, plugin) = "websocket.cma"
 archive(native) = "websocket.cmxa"
