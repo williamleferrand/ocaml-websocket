@@ -169,7 +169,13 @@ let rec read_frames ic push =
   read_frames ic push
 
 (* Good enough, and do not eat entropy *)
-let myrng = CK.Random.pseudo_rng (string_of_float (Unix.gettimeofday())) (* (CK.Random.string CK.Random.secure_rng 20) *)
+let myrng =
+  CK.Random.pseudo_rng (
+    let s1 = string_of_float (Unix.gettimeofday()) in
+    let s2 = string_of_float (Unix.gettimeofday()) in
+    let s3 = string_of_float (Unix.gettimeofday()) in
+    s1 ^ s2 ^ s3
+  ) (* (CK.Random.string CK.Random.secure_rng 20) *)
 
 let rec write_frames ~masked stream oc =
   let send_frame fr =
